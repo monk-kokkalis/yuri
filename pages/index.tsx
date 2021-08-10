@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Home from 'components/Home/Home';
 
 function Index() {
     return (
@@ -6,6 +7,7 @@ function Index() {
             <Head>
                 <title>Home</title>
             </Head>
+            <Home />
         </>
     )
 }

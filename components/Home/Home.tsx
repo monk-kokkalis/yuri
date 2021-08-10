@@ -1,8 +1,9 @@
-import style from './Home.module.scss';
+import Style from './Home.module.scss';
+import Sidebar from './Sidebar/Sidebar';
 function Home() {
     return (
-        <div className={style.Home}>
-            fathead
+        <div className={Style.Home}>
+            <Sidebar />
         </div>
     )
 }
