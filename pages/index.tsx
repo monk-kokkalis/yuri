@@ -1,7 +1,13 @@
-export default function Home() {
+import Head from 'next/head';
+
+function Index() {
     return (
-        <div className="Home">
-            fathead
-        </div>
+        <>
+            <Head>
+                <title>Home</title>
+            </Head>
+        </>
     )
 }
+
+export default Index;
