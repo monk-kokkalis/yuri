@@ -16,27 +16,29 @@ function Sidebar() {
                 <FilterListIcon />
                 <span>Filter result</span>
             </div>
-            <Accordion
-                label="Categories"
-                padding="5px 25px"
-                content={
-                    <>
-                        {colleges.map((el: CollegeType, index: number) => (
-                            <CheckGroup
-                                key={index}
-                                label={el.name}
-                                items={el.degrees}
-                            />
-                        ))}
-                    </>
-                }
-                searchElement={
-                    <div className={Style.search__box}>
-                        <SearchIcon fontSize="small" />
-                        <input type="text" placeholder="Search" />
-                    </div>
-                }
-            />
+            <div className={Style.overflow__container} style={{height: 'calc(100vh - 45px)'}}>
+                <Accordion
+                    label="Categories"
+                    padding="5px 25px"
+                    content={
+                        <>
+                            {colleges.map((el: CollegeType, index: number) => (
+                                <CheckGroup
+                                    key={index}
+                                    label={el.name}
+                                    items={el.degrees}
+                                />
+                            ))}
+                        </>
+                    }
+                    searchElement={
+                        <div className={Style.search__box}>
+                            <SearchIcon fontSize="small" />
+                            <input type="text" placeholder="Search" />
+                        </div>
+                    }
+                />
+            </div>
         </div>
     )
 }

@@ -15,10 +15,6 @@ interface Props {
 function CheckGroup({label, items}: Props) {
     return (
         <div className={Style.CheckGroup}>
-            {/* <div className={Style.search__box}>
-                <SearchIcon fontSize="small" />
-                <input type="text" placeholder="Search" />
-            </div> */}
             <div className={Style.content__items}>
                 <Accordion
                     label={label}
@@ -29,7 +25,7 @@ function CheckGroup({label, items}: Props) {
                                     <FormControlLabel
                                         control={<Checkbox name={el.toLowerCase()} size="small" color="primary" />}
                                         label={
-                                            <span style={{fontSize: '14px', color: 'rgba(0, 0, 0, 0.8)'}}>
+                                            <span style={{fontSize: '13px', color: 'rgba(0, 0, 0, 0.8)'}}>
                                                 {el.charAt(0).toUpperCase() + el.slice(1)}
                                             </span>
                                         }

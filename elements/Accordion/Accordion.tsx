@@ -31,7 +31,7 @@ function Accordion({content, label, padding, searchElement}: Props) {
                     <KeyboardArrowRightIcon />
                 </IconButton>
             </div>
-            <div className={Style.content} style={{maxHeight: expanded ? '500px' : '0px'}} ref={contentRef}>
+            <div className={Style.content} style={{maxHeight: expanded ? '5000px' : '0px'}} ref={contentRef}>
                 {searchElement}
                 {content}
             </div>
