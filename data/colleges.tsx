@@ -10,6 +10,12 @@ export const colleges = [
             'Packaging',
             'Software'
         ]
+    },
+    {
+        name: 'Nursing',
+        degrees: [
+            'Nursing'
+        ]
     }
 ]
 

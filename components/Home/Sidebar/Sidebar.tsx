@@ -1,6 +1,7 @@
 import Style from './Sidebar.module.scss';
 import {
-    FilterList as FilterListIcon
+    FilterList as FilterListIcon,
+    Search as SearchIcon
 } from '@material-ui/icons';
 // data
 import {colleges, CollegeType} from 'data/colleges';
@@ -28,6 +29,12 @@ function Sidebar() {
                             />
                         ))}
                     </>
+                }
+                searchElement={
+                    <div className={Style.search__box}>
+                        <SearchIcon fontSize="small" />
+                        <input type="text" placeholder="Search" />
+                    </div>
                 }
             />
         </div>

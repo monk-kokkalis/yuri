@@ -7,11 +7,12 @@ import {
     IconButton
 } from '@material-ui/core';
 interface Props {
+    content: JSX.Element;
     label: string;
     padding?: string;
-    content: JSX.Element;
+    searchElement?: JSX.Element;
 }
-function Accordion({content, label, padding}: Props) {
+function Accordion({content, label, padding, searchElement}: Props) {
     const contentRef = useRef<HTMLDivElement>(null!);
     const [expanded, setExpanded] = useState(true);
 
@@ -31,6 +32,7 @@ function Accordion({content, label, padding}: Props) {
                 </IconButton>
             </div>
             <div className={Style.content} style={{maxHeight: expanded ? '500px' : '0px'}} ref={contentRef}>
+                {searchElement}
                 {content}
             </div>
         </div>

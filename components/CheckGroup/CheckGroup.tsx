@@ -15,16 +15,16 @@ interface Props {
 function CheckGroup({label, items}: Props) {
     return (
         <div className={Style.CheckGroup}>
-            <div className={Style.search__box}>
+            {/* <div className={Style.search__box}>
                 <SearchIcon fontSize="small" />
                 <input type="text" placeholder="Search" />
-            </div>
+            </div> */}
             <div className={Style.content__items}>
                 <Accordion
                     label={label}
                     content={
                         <ul>
-                            {items?.map((el: string, index: number) => (
+                            {items?.map((el: string, index: number) => 
                                 <li key={index}>
                                     <FormControlLabel
                                         control={<Checkbox name={el.toLowerCase()} size="small" color="primary" />}
@@ -35,7 +35,7 @@ function CheckGroup({label, items}: Props) {
                                         }
                                     />
                                 </li>
-                            ))}
+                            )}
                         </ul>
                     }
                 />             
