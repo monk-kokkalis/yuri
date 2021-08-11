@@ -10,7 +10,7 @@ div.Accordion {
     }
 
     div.content {
-        overflow-y: hidden;
+        overflow: hidden;
         transition: max-height 500ms ease-in;
         padding-left: 16px;
     }

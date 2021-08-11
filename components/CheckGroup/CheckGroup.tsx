@@ -1,23 +1,18 @@
-import {useState} from 'react';
 import Style from './CheckGroup.module.scss';
 import {
-    ExpandMore as ExpandMoreIcon,
     Search as SearchIcon
 } from '@material-ui/icons';
 import {
     Checkbox,
-    FormControlLabel,
-    IconButton
+    FormControlLabel
 } from '@material-ui/core';
-// data
-import {engineeringDegrees} from 'data/engineering';
 // elements
 import Accordion from 'elements/Accordion/Accordion';
 interface Props {
     label: string;
+    items?: Array<any>;
 }
-function CheckGroup(props: Props) {
-    const [expanded, setExpanded] = useState(true);
+function CheckGroup({label, items}: Props) {
     return (
         <div className={Style.CheckGroup}>
             <div className={Style.search__box}>
@@ -26,10 +21,10 @@ function CheckGroup(props: Props) {
             </div>
             <div className={Style.content__items}>
                 <Accordion
-                    label="Engineering"
+                    label={label}
                     content={
                         <ul>
-                            {engineeringDegrees.map((el: string, index: number) => (
+                            {items?.map((el: string, index: number) => (
                                 <li key={index}>
                                     <FormControlLabel
                                         control={<Checkbox name={el.toLowerCase()} size="small" color="primary" />}
