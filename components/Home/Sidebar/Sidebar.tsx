@@ -19,7 +19,6 @@ function Sidebar() {
                 padding="5px 25px"
                 content={<CheckGroup label="Categories" />}
             />
-            {/*  */}
         </div>
     )
 }

@@ -25,19 +25,25 @@ function CheckGroup(props: Props) {
                 <input type="text" placeholder="Search" />
             </div>
             <div className={Style.content__items}>
-                <div className={Style.content__items__item}>
-                    <label>Engineering</label>
-                    <ul>
-                        {engineeringDegrees.map((el: string, index: number) => (
-                            <li key={index}>
-                                <FormControlLabel
-                                    control={<Checkbox name={el.toLowerCase()} size="small" color="primary" />}
-                                    label={el.charAt(0).toUpperCase() + el.slice(1)}
-                                />
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                <Accordion
+                    label="Engineering"
+                    content={
+                        <ul>
+                            {engineeringDegrees.map((el: string, index: number) => (
+                                <li key={index}>
+                                    <FormControlLabel
+                                        control={<Checkbox name={el.toLowerCase()} size="small" color="primary" />}
+                                        label={
+                                            <span style={{fontSize: '14px', color: 'rgba(0, 0, 0, 0.8)'}}>
+                                                {el.charAt(0).toUpperCase() + el.slice(1)}
+                                            </span>
+                                        }
+                                    />
+                                </li>
+                            ))}
+                        </ul>
+                    }
+                />             
             </div>
         </div>
     )
