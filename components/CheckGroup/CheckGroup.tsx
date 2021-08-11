@@ -9,6 +9,8 @@ import {
     FormControlLabel,
     IconButton
 } from '@material-ui/core';
+// data
+import {engineeringDegrees} from 'data/engineering';
 // elements
 import Accordion from 'elements/Accordion/Accordion';
 interface Props {
@@ -26,48 +28,14 @@ function CheckGroup(props: Props) {
                 <div className={Style.content__items__item}>
                     <label>Engineering</label>
                     <ul>
-                        <li>
-                            <FormControlLabel
-                                control={<Checkbox name="chemical" size="small" color="primary" />}
-                                label="Chemical"
-                            />
-                        </li>
-                        <li>
-                            <FormControlLabel
-                                control={<Checkbox name="chemical" size="small" color="primary" />}
-                                label="Civil"
-                            />
-                        </li>
-                        <li>
-                            <FormControlLabel
-                                control={<Checkbox name="chemical" size="small" color="primary" />}
-                                label="Electrical"
-                            />
-                        </li>
-                        <li>
-                            <FormControlLabel
-                                control={<Checkbox name="chemical" size="small" color="primary" />}
-                                label="Electronics"
-                            />
-                        </li>
-                        <li>
-                            <FormControlLabel
-                                control={<Checkbox name="chemical" size="small" color="primary" />}
-                                label="Mechanical"
-                            />
-                        </li>
-                        <li>
-                            <FormControlLabel
-                                control={<Checkbox name="chemical" size="small" color="primary" />}
-                                label="Packaging"
-                            />
-                        </li>
-                        <li>
-                            <FormControlLabel
-                                control={<Checkbox name="chemical" size="small" color="primary" />}
-                                label="Software"
-                            />
-                        </li>
+                        {engineeringDegrees.map((el: string, index: number) => (
+                            <li key={index}>
+                                <FormControlLabel
+                                    control={<Checkbox name={el.toLowerCase()} size="small" color="primary" />}
+                                    label={el.charAt(0).toUpperCase() + el.slice(1)}
+                                />
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
