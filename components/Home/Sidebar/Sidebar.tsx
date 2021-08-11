@@ -3,7 +3,8 @@ import {
     ExpandMore as ExpandMoreIcon,
     FilterList as FilterListIcon
 } from '@material-ui/icons';
-// components
+// elements
+import Accordion from 'elements/Accordion/Accordion';
 import CheckGroup from 'components/CheckGroup/CheckGroup';
 
 function Sidebar() {
@@ -13,10 +14,12 @@ function Sidebar() {
                 <FilterListIcon />
                 <span>Filter result</span>
             </div>
-            <CheckGroup
+            <Accordion
                 label="Categories"
                 padding="5px 25px"
+                content={<CheckGroup label="Categories" />}
             />
+            {/*  */}
         </div>
     )
 }

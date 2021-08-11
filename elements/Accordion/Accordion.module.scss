@@ -1,0 +1,18 @@
+div.Accordion {
+    font-size: var(--font-size);
+    div.label {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        button {
+            position: relative;
+            right: -10px;
+        }
+    }
+
+    div.content {
+        overflow: hidden;
+        transition: height 250ms ease-in;
+        padding-left: 16px;
+    }
+}
