@@ -1,7 +1,11 @@
 import Style from './Sidebar.module.scss';
 import {
+    ExpandMore as ExpandMoreIcon,
     FilterList as FilterListIcon
 } from '@material-ui/icons';
+// components
+import CheckGroup from 'components/CheckGroup/CheckGroup';
+
 function Sidebar() {
     return (
         <div className={Style.Sidebar}>
@@ -9,7 +13,10 @@ function Sidebar() {
                 <FilterListIcon />
                 <span>Filter result</span>
             </div>
-            <div className={Style.heading}>Categories</div>
+            <CheckGroup
+                label="Categories"
+                padding="5px 25px"
+            />
         </div>
     )
 }

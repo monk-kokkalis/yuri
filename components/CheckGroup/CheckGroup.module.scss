@@ -1,0 +1,50 @@
+.CheckGroup {
+    font-size: var(--font-size);
+    div.label {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        button {
+            position: relative;
+            right: -10px;
+        }
+    }
+
+    div.content {
+        overflow: hidden;
+        transition: height 400ms ease-in-out;
+        padding-left: 16px;
+        // outline: 1px solid rgba(0, 0, 0, 0.8);
+        div.search__box {
+            align-items: center;
+            background-color: #fff;
+            display: flex;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            svg {
+                margin-right: 6px;
+                transform: scaleX(-1);
+            }
+            input {
+                padding: 2px 6px;
+                flex: 1 1 100%;
+            }
+        }
+
+        div.content__items {
+            div.content__items__item {
+                label {
+                    color: rgba(0, 0, 0, 0.6);
+                }
+                ul {
+                    padding: 0 10px;
+                    span {
+                        font-size: var(--font-size);
+                    }
+                }
+            }
+        }
+    }
+}

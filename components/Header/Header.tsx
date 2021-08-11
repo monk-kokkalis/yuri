@@ -1,5 +1,8 @@
 import Style from './Header.module.scss';
 import {
+    IconButton
+} from '@material-ui/core';
+import {
     BookmarkBorder as BookmarkBorderIcon,
     Search as SearchIcon,
     MailOutline as MailOutlineIcon,
@@ -14,9 +17,15 @@ function Header() {
                 <input type="text" placeholder="Search" />
             </div>
             <div className={Style.icons__section}>
-                <BookmarkBorderIcon />
-                <MailOutlineIcon />
-                <NotificationsNoneIcon />
+                <IconButton>
+                    <BookmarkBorderIcon />
+                </IconButton>
+                <IconButton>
+                    <MailOutlineIcon />
+                </IconButton>
+                <IconButton>
+                    <NotificationsNoneIcon />
+                </IconButton>
             </div>
         </header>
     )
