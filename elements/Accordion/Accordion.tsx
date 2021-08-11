@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from 'react';
+import {useRef, useState} from 'react';
 import Style from './Accordion.module.scss';
 import {
     ExpandMore as ExpandMoreIcon,
@@ -13,12 +13,7 @@ interface Props {
 }
 function Accordion({content, label, padding}: Props) {
     const contentRef = useRef<HTMLDivElement>(null!);
-    const [contentHeight, setContentHeight] = useState('auto');
     const [expanded, setExpanded] = useState(true);
-
-    useEffect(function initContentHeight() {
-        setContentHeight(contentRef.current.scrollHeight + 'px');
-    }, [])
 
     return (
         <div className={Style.Accordion} style={{padding: padding}}>
@@ -28,7 +23,7 @@ function Accordion({content, label, padding}: Props) {
                     <ExpandMoreIcon />
                 </IconButton>
             </div>
-            <div className={Style.content} style={{height: expanded ? contentHeight : '0px'}} ref={contentRef}>
+            <div className={Style.content} style={{maxHeight: expanded ? '500px' : '0px'}} ref={contentRef}>
                 {content}
             </div>
         </div>

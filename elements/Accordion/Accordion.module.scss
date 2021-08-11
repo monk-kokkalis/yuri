@@ -1,6 +1,5 @@
 div.Accordion {
     font-size: 14px;
-    border: 1px solid black;
     div.label {
         align-items: center;
         display: flex;
@@ -12,7 +11,7 @@ div.Accordion {
 
     div.content {
         overflow-y: hidden;
-        transition: height 250ms ease-in;
+        transition: max-height 500ms ease-in;
         padding-left: 16px;
     }
 }
