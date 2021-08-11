@@ -25,7 +25,7 @@ function CheckGroup({label, items}: Props) {
                                     <FormControlLabel
                                         control={<Checkbox name={el.toLowerCase()} size="small" color="primary" />}
                                         label={
-                                            <span style={{fontSize: '13px', color: 'rgba(0, 0, 0, 0.8)'}}>
+                                            <span style={{fontSize: '12px', color: 'rgba(0, 0, 0, 0.8)'}}>
                                                 {el.charAt(0).toUpperCase() + el.slice(1)}
                                             </span>
                                         }

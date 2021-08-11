@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import Style from './Accordion.module.scss';
 import {
     KeyboardArrowRight as KeyboardArrowRightIcon
@@ -14,7 +14,12 @@ interface Props {
 }
 function Accordion({content, label, padding, searchElement}: Props) {
     const contentRef = useRef<HTMLDivElement>(null!);
+    const [contentMaxHeight, setContentMaxHeight] = useState('auto');
     const [expanded, setExpanded] = useState(true);
+
+    useEffect(function initMaxHeight() {
+        setContentMaxHeight(contentRef.current.scrollHeight + 'px');
+    }, []);
 
     return (
         <div className={Style.Accordion} style={{padding: padding}}>
@@ -31,7 +36,7 @@ function Accordion({content, label, padding, searchElement}: Props) {
                     <KeyboardArrowRightIcon />
                 </IconButton>
             </div>
-            <div className={Style.content} style={{maxHeight: expanded ? '5000px' : '0px'}} ref={contentRef}>
+            <div className={Style.content} style={{maxHeight: expanded ? contentMaxHeight : '0px'}} ref={contentRef}>
                 {searchElement}
                 {content}
             </div>

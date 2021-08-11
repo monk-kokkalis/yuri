@@ -13,7 +13,7 @@ export const colleges = [
             'Computer Science',
             'Digital Media and Interactive Arts',
             'Information Technology',
-            'Bachelor in Library and Information Science'
+            'Library and Information Science'
         ]
     },
     {
