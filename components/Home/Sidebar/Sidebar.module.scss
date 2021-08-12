@@ -1,16 +1,20 @@
-.Sidebar {
-    $padding: 10px 25px;
-    $font-size: 14px;
-    $color: rgba(0, 0, 0, 0.8);
+$padding: 10px 25px;
+$font-size: 14px;
+$color: rgba(0, 0, 0, 0.8);
+$width: 310px;
+$hidden-left: $width * -1;
+$shown-left: 0px;
 
+.Sidebar {
     background-color: #fff;
     box-shadow: 0px 1px 9px -3px rgb(0 0 0 / 75%);
     left: 0;
     min-height: 100vh;
     position: fixed;
     top: 0;
-    width: 310px;
+    width: $width;
     z-index: 10;
+    left: $width * -1;
 
     div.title {
         align-items: center;
@@ -18,12 +22,17 @@
         display: flex;
         padding: 20px 25px 0 25px;
         height: 45px;
-        svg {
-            margin-right: 15px;
-        }
-        span {
-            font-size: $font-size;
-            font-weight: 300;
+        justify-content: space-between;
+        label {
+            align-items: center;
+            display: flex;
+            svg {
+                margin-right: 15px;
+            }
+            span {
+                font-size: $font-size;
+                font-weight: 300;
+            }
         }
     }
 
@@ -62,4 +71,31 @@
             border: 1px solid rgba(0, 0, 0, 0.6);
         }
     }
+}
+
+$sidebar-transition: left 300ms ease-in-out;
+.sidebarEnter {
+    left: $hidden-left;
+}
+
+.sidebarEnterActive {
+    left: $shown-left;
+    transition: $sidebar-transition;
+}
+
+.sidebarEnterDone {
+    left: $shown-left
+}
+
+.sidebarExit {
+    left: $shown-left;
+}
+
+.sidebarExitActive {
+    left: $hidden-left;
+    transition: $sidebar-transition;
+}
+
+.sidebarExitDone {
+    left: $hidden-left;
 }

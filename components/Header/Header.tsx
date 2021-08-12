@@ -7,6 +7,7 @@ import {
     BookmarkBorder as BookmarkBorderIcon,
     Search as SearchIcon,
     MailOutline as MailOutlineIcon,
+    Menu as MenuIcon,
     NotificationsNone as NotificationsNoneIcon
 } from '@material-ui/icons';
 
@@ -20,6 +21,9 @@ function Header(props: Props) {
     }, [context.toggled])
     return (
         <header className={Style.Header}>
+            <IconButton onClick={() => context.setToggled(!context.toggled)}>
+                <MenuIcon />
+            </IconButton>
             <div className={Style.input__group}>
                 <SearchIcon />
                 <input type="text" placeholder="Search" />

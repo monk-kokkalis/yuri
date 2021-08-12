@@ -5,7 +5,7 @@ interface Props {
 }
 
 function Provider({children}: Props) {
-    const [toggled, setToggled] = useState(true);
+    const [toggled, setToggled] = useState<boolean>(true);
 
     const map = {
         toggled: toggled,
