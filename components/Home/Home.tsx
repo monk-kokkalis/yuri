@@ -5,9 +5,9 @@ import Provider, {Context} from './Sidebar/Provider';
 function Home() {
     return (
         <Provider>
-            <Header context={Context} />
             <div className={Style.Home}>
                 <Sidebar />
+                <Header context={Context} />
             </div>
         </Provider>
     )

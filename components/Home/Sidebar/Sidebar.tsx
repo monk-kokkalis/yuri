@@ -37,7 +37,7 @@ function Sidebar() {
                         <DoubleArrowIcon />
                     </IconButton>
                 </div>
-                <div className={Style.overflow__container} style={{height: 'calc(100vh - 45px)'}}>
+                <div className={Style.overflow__container} style={{height: 'calc(100vh - var(--header-height))'}}>
                     <Categories />
                 </div>
             </div>

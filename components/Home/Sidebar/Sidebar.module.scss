@@ -8,21 +8,26 @@ $shown-left: 0px;
 .Sidebar {
     background-color: #fff;
     box-shadow: 0px 1px 9px -3px rgb(0 0 0 / 75%);
-    left: 0;
     min-height: 100vh;
-    position: fixed;
-    top: 0;
+    min-width: 0px;
+    overflow: hidden;
     width: $width;
-    z-index: 10;
-    left: $width * -1;
+    @media(max-width: 768px) {
+        // on mobile devices, the sidebar is fixed
+        left: $width * -1;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+    }
 
     div.title {
         align-items: center;
         color: $color;
         display: flex;
-        padding: 20px 25px 0 25px;
-        height: 45px;
+        padding: 0px 25px;
+        height: var(--header-height);
         justify-content: space-between;
+        width: inherit;
         label {
             align-items: center;
             display: flex;
@@ -37,7 +42,9 @@ $shown-left: 0px;
     }
 
     div.overflow__container {
-        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: inherit;
         &::-webkit-scrollbar {
             width: 5px;
         }
@@ -73,29 +80,63 @@ $shown-left: 0px;
     }
 }
 
-$sidebar-transition: left 300ms ease-in-out;
-.sidebarEnter {
-    left: $hidden-left;
+// animation for standard devices
+@media (min-width: 768px) {
+    $sidebar-transition: flex 300ms ease-in-out;
+    .sidebarEnter {
+        flex: 0 1 0px;
+    }
+    
+    .sidebarEnterActive {
+        flex: 0 1 $width;
+        transition: $sidebar-transition;
+    }
+    
+    .sidebarEnterDone {
+        flex: 0 1 $width;
+    }
+    
+    .sidebarExit {
+        // left: $shown-left;
+        flex: 0 1 $width;
+    }
+    
+    .sidebarExitActive {
+        flex: 0 1 0px;
+        transition: $sidebar-transition;
+    }
+    
+    .sidebarExitDone {
+        flex: 0 1 0px;
+    }
 }
 
-.sidebarEnterActive {
-    left: $shown-left;
-    transition: $sidebar-transition;
-}
-
-.sidebarEnterDone {
-    left: $shown-left
-}
-
-.sidebarExit {
-    left: $shown-left;
-}
-
-.sidebarExitActive {
-    left: $hidden-left;
-    transition: $sidebar-transition;
-}
-
-.sidebarExitDone {
-    left: $hidden-left;
+// animation for mobile devices
+@media (max-width: 768px) {
+    $sidebar-transition: left 300ms ease-in-out;
+    .sidebarEnter {
+        left: $hidden-left;
+    }
+    
+    .sidebarEnterActive {
+        left: $shown-left;
+        transition: $sidebar-transition;
+    }
+    
+    .sidebarEnterDone {
+        left: $shown-left
+    }
+    
+    .sidebarExit {
+        left: $shown-left;
+    }
+    
+    .sidebarExitActive {
+        left: $hidden-left;
+        transition: $sidebar-transition;
+    }
+    
+    .sidebarExitDone {
+        left: $hidden-left;
+    }
 }
