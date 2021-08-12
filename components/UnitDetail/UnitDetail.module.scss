@@ -1,0 +1,50 @@
+div.UnitDetail {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 0px 30px 0px rgb(82 63 105 / 5%);
+    padding: 20px;
+
+    div.details {
+        display: flex;        
+        figure {
+            border-radius: 4px;
+            position: relative;
+            margin-right: 25px;
+            overflow: hidden;
+            width: 120px;
+            height: 120px;
+        }
+        section {
+            strong {
+                font-weight: 500;
+            }
+            div[class~=information] {
+                margin: 12px 0;
+                display: flex;
+                color: #757575;
+                div[class~=college] {
+                    align-items: center;
+                    color: var(--primary);
+                    display: flex;
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin-right: 15px;
+                }
+
+                div[class~=icon--label] {
+                    align-items: center;
+                    display: flex;
+                    margin-right: 10px;
+
+                    svg {
+                        font-size: 22px;
+                        margin-right: 10px;
+                    }
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -45,6 +45,11 @@ $shown-left: 0px;
         overflow-x: hidden;
         overflow-y: auto;
         width: inherit;
+        height: calc(100vh - var(--header-height));
+        @media (max-width: 768px) {
+            height: calc(100vh + var(--header-height));
+        }
+
         &::-webkit-scrollbar {
             width: 5px;
         }

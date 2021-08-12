@@ -1,4 +1,13 @@
+$background-color: #eef0f8;
 .Home {
     background-color: transparent;
     display: flex;
+    div.content {
+        flex: 1 1 auto;
+        background-color: $background-color;
+
+        div.container {
+            padding: 15px 20px;
+        }
+    }
 }
