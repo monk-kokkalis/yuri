@@ -1,3 +1,4 @@
+import {debounce} from 'lodash';
 import {useState} from 'react';
 import {Search as SearchIcon} from '@material-ui/icons';
 // data
@@ -19,6 +20,7 @@ function Categories() {
         });
         setData(filteredResult);
     }
+    const debouncedCallback = debounce((event: React.ChangeEvent) => filterResult(event), 300);
     return (
         <Accordion
             label="Categories"
@@ -37,7 +39,7 @@ function Categories() {
             searchElement={
                 <div className="search__box">
                     <SearchIcon fontSize="small" />
-                    <input type="text" placeholder="Search" onChange={filterResult} />
+                    <input type="text" placeholder="Search" onChange={debouncedCallback} />
                 </div>
             }
         />
