@@ -1,3 +1,4 @@
+import {useContext, useEffect} from 'react';
 import Style from './Header.module.scss';
 import {
     IconButton
@@ -9,7 +10,14 @@ import {
     NotificationsNone as NotificationsNoneIcon
 } from '@material-ui/icons';
 
-function Header() {
+interface Props {
+    context: React.Context<any>;
+}
+function Header(props: Props) {
+    const context = useContext(props.context);
+    useEffect(() => {
+        console.log('toggled status: ', context.toggled);
+    }, [context.toggled])
     return (
         <header className={Style.Header}>
             <div className={Style.input__group}>
