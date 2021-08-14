@@ -8,6 +8,9 @@ $background-color: #eef0f8;
 
         div.container {
             padding: 15px 20px;
+            @media(max-width: 600px) {
+                padding: 15px 10px;
+            }
         }
     }
 }

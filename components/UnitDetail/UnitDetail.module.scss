@@ -16,32 +16,55 @@ div.UnitDetail {
         }
         section {
             strong {
-                font-weight: 500;
+                font-weight: 400;
+                color: #181c32;
             }
             div[class~=information] {
                 margin: 12px 0;
                 display: flex;
                 color: #757575;
+                @media (max-width: 700px) {
+                    flex-direction: column;
+                }
                 div[class~=college] {
                     align-items: center;
                     color: var(--primary);
                     display: flex;
                     font-size: 14px;
                     font-weight: 500;
-                    margin-right: 15px;
+                    margin-right: 18px;
+                    @media (max-width: 700px) {
+                        margin-bottom: 12px;
+                    }
                 }
 
                 div[class~=icon--label] {
                     align-items: center;
                     display: flex;
                     margin-right: 10px;
-
                     svg {
                         font-size: 22px;
                         margin-right: 10px;
                     }
                     span {
-                        font-size: 14px;
+                        font-size: 13px;
+                    }
+                }
+            }
+            div[class~=contact] {
+                div[class~=key--value--pair] {
+                    display: flex;
+                    font-size: 12px;
+                    &:not(:first-of-type) {
+                        margin-top: 5px;
+                    }
+                    div[class~=key] {
+                        color: #3f4254;
+                        font-weight: 600;
+                        margin-right: 10px;
+                    }
+                    div[class~=value] {
+                        color: #b5b5c3;
                     }
                 }
             }

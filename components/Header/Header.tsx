@@ -1,4 +1,4 @@
-import {useContext, useEffect} from 'react';
+import {useContext} from 'react';
 import Style from './Header.module.scss';
 import {
     IconButton
@@ -16,9 +16,7 @@ interface Props {
 }
 function Header(props: Props) {
     const context = useContext(props.context);
-    useEffect(() => {
-        console.log('toggled status: ', context.toggled);
-    }, [context.toggled])
+    
     return (
         <header className={Style.Header}>
             <IconButton onClick={() => context.setToggled(!context.toggled)}>

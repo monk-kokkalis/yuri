@@ -12,7 +12,7 @@ function Home() {
                 <div className={Style.content}>
                     <Header context={Context} />
                     <div className={Style.container}>
-                        {/* <UnitDetail /> */}
+                        <UnitDetail />
                     </div>
                 </div>
             </div>
