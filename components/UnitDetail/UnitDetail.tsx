@@ -16,8 +16,8 @@ function UnitDetail() {
                         alt="Isaac"
                     />
                 </figure>
-                <section>
-                    {/* data */}
+                <div className="main">
+                {/* data */}
                     <strong>Isaac Clarke</strong>
                     {/* data */}
                     <div className="information">
@@ -31,22 +31,22 @@ function UnitDetail() {
                             <span>Georgia</span>
                         </div>
                     </div>
-                    {/* data */}
-                    <div className="contact">
-                        <div className="key--value--pair">
-                            <div className="key">Email:</div>
-                            <div className="value">isaac_clarke@gmail.com</div>
-                        </div>
-                        <div className="key--value--pair">
-                            <div className="key">Phone:</div>
-                            <div className="value">+63 921 551 4491</div>
-                        </div>
-                        <div className="key--value--pair">
-                            <div className="key">Status:</div>
-                            <div className="value">Graduated</div>
-                        </div>
+                </div>
+                {/* data */}
+                <div className="contact">
+                    <div className="key--value--pair">
+                        <div className="key">Email:</div>
+                        <div className="value">isaac_clarke@gmail.com</div>
                     </div>
-                </section>
+                    <div className="key--value--pair">
+                        <div className="key">Phone:</div>
+                        <div className="value">+63 921 551 4491</div>
+                    </div>
+                    <div className="key--value--pair">
+                        <div className="key">Status:</div>
+                        <div className="value">Graduated</div>
+                    </div>
+                </div>
             </div>
         </div>
     )

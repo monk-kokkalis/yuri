@@ -5,16 +5,20 @@ div.UnitDetail {
     padding: 20px;
 
     div.details {
-        display: flex;        
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        column-gap: 20px;
+        row-gap: 5px;
         figure {
+            grid-row: span 2;
+
             border-radius: 4px;
-            position: relative;
-            margin-right: 25px;
-            overflow: hidden;
-            width: 120px;
             height: 120px;
+            overflow: hidden;
+            position: relative;
+            width: 120px;
         }
-        section {
+        div[class~=main] {
             strong {
                 font-weight: 400;
                 color: #181c32;
@@ -51,21 +55,24 @@ div.UnitDetail {
                     }
                 }
             }
-            div[class~=contact] {
-                div[class~=key--value--pair] {
-                    display: flex;
-                    font-size: 12px;
-                    &:not(:first-of-type) {
-                        margin-top: 5px;
-                    }
-                    div[class~=key] {
-                        color: #3f4254;
-                        font-weight: 600;
-                        margin-right: 10px;
-                    }
-                    div[class~=value] {
-                        color: #b5b5c3;
-                    }
+        }
+        div[class~=contact] {
+            @media (max-width: 500px) {
+                grid-column: span 2;
+            }
+            div[class~=key--value--pair] {
+                display: flex;
+                font-size: 12px;
+                &:not(:first-of-type) {
+                    margin-top: 5px;
+                }
+                div[class~=key] {
+                    color: #3f4254;
+                    font-weight: 600;
+                    margin-right: 10px;
+                }
+                div[class~=value] {
+                    color: #b5b5c3;
                 }
             }
         }
