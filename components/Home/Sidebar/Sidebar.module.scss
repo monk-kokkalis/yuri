@@ -1,3 +1,4 @@
+@use 'styles/mixins.scss';
 $padding: 10px 25px;
 $font-size: 14px;
 $color: rgba(0, 0, 0, 0.8);
@@ -8,6 +9,7 @@ $shown-left: 0px;
 .Sidebar {
     background-color: #fff;
     box-shadow: 0px 1px 9px -3px rgb(0 0 0 / 75%);
+    flex: 0 0 $width;
     min-height: 100vh;
     min-width: 0px;
     overflow: hidden;
@@ -47,20 +49,9 @@ $shown-left: 0px;
         overflow-x: hidden;
         overflow-y: auto;
         width: inherit;
-        height: calc(100vh - var(--header-height));
-
-        &::-webkit-scrollbar {
-            width: 5px;
-        }
-        scrollbar-width: thin;
-        &::-webkit-scrollbar-track {
-            background-color: rgba(0, 0, 0, 0.08);
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: rgba(0, 0, 0, 0.15);
-            border-radius: 6px;
-        }
+        // height: calc(100vh - var(--header-height));
+        @include mixins.calculated-viewport-height;
+        @include mixins.scroll-style;
     }
 
     div.search__box {

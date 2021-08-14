@@ -4,47 +4,54 @@ import {
     RoomOutlined as RoomOutlinedIcon,
     SchoolOutlined as SchoolOutlinedIcon
 } from '@material-ui/icons';
+import {UnitItem} from 'data/units';
+interface Props {
+    index?: number;
+    unit: UnitItem;
+}
 
-function UnitDetail() {
+function UnitDetail({index, unit}: Props) {
+    const imageLoader = ({src}: {src: string}) => {
+        return `https://i.pravatar.cc/${src}`;
+    }
+
     return (
         <div className={Style.UnitDetail}>
             <div className={Style.details}>
                 <figure>
                     <Image
+                        loader={imageLoader}
                         layout="fill"
-                        src="/images/isaac.jpeg"
-                        alt="Isaac"
+                        src={String(120 + index!)}
+                        alt="profile picture"
                     />
                 </figure>
                 <div className="main">
-                {/* data */}
-                    <strong>Isaac Clarke</strong>
-                    {/* data */}
+                    <strong>{unit.firstName + " " + unit.lastName}</strong>
                     <div className="information">
-                        <div className="college">Engineering</div>
+                        <div className="college">{unit.college}</div>
                         <div className="icon--label">
                             <SchoolOutlinedIcon />
-                            <span>Electrical</span>
+                            <span>{unit.degree}</span>
                         </div>
                         <div className="icon--label">
                             <RoomOutlinedIcon />
-                            <span>Georgia</span>
+                            <span>{unit.state}</span>
                         </div>
                     </div>
                 </div>
-                {/* data */}
                 <div className="contact">
                     <div className="key--value--pair">
                         <div className="key">Email:</div>
-                        <div className="value">isaac_clarke@gmail.com</div>
+                        <div className="value">{unit.email}</div>
                     </div>
                     <div className="key--value--pair">
                         <div className="key">Phone:</div>
-                        <div className="value">+63 921 551 4491</div>
+                        <div className="value">{unit.mobileNumber}</div>
                     </div>
                     <div className="key--value--pair">
                         <div className="key">Status:</div>
-                        <div className="value">Graduated</div>
+                        <div className="value">{unit.status}</div>
                     </div>
                 </div>
             </div>

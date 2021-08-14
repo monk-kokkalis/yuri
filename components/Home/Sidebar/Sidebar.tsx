@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import {useContext, useRef} from 'react';
 import Style from './Sidebar.module.scss';
 import {
     IconButton
@@ -14,6 +14,7 @@ import {Context} from './Provider';
 import {CSSTransition} from 'react-transition-group';
 function Sidebar() {
     const context = useContext(Context);
+    const transitionRef = useRef(null!);
     const transitionClasses = {
         enter: Style.sidebarEnter,
         enterActive: Style.sidebarEnterActive,
@@ -26,8 +27,8 @@ function Sidebar() {
         context.setToggled(!context.toggled);
     }
     return (
-        <CSSTransition in={context.toggled} timeout={300} classNames={transitionClasses} >
-            <div className={Style.Sidebar}>
+        <CSSTransition in={context.toggled} timeout={300} classNames={transitionClasses} nodeRef={transitionRef} >
+            <div className={Style.Sidebar} ref={transitionRef}>
                 <div className={Style.title}>
                     <label>
                         <FilterListIcon />

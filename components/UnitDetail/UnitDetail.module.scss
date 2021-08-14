@@ -2,8 +2,7 @@ div.UnitDetail {
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0px 0px 30px 0px rgb(82 63 105 / 5%);
-    padding: 20px;
-
+    padding: 10px 20px;
     div.details {
         display: grid;
         grid-template-columns: 120px 1fr;
@@ -24,7 +23,7 @@ div.UnitDetail {
                 color: #181c32;
             }
             div[class~=information] {
-                margin: 12px 0;
+                margin: 5px 0;
                 display: flex;
                 color: #757575;
                 @media (max-width: 700px) {

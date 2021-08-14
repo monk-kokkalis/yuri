@@ -1,3 +1,4 @@
+@use 'styles/mixins.scss';
 $background-color: #eef0f8;
 .Home {
     background-color: transparent;
@@ -7,7 +8,10 @@ $background-color: #eef0f8;
         background-color: $background-color;
 
         div.container {
-            padding: 15px 20px;
+            @include mixins.calculated-viewport-height;
+            @include mixins.scroll-style;
+            overflow: auto;
+            padding: 10px;
             @media(max-width: 600px) {
                 padding: 15px 10px;
             }
